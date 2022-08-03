@@ -1,0 +1,16 @@
+<nav>
+    {%
+        set links = {
+            home: '#',
+            contact: '#',
+            about: '#'
+        }
+    %}
+    <ul>
+        {% for page, url in links %}
+            <li {% if active == page %} class="active" {% endif %}>
+                <a href="{{ url }}">{{ page|capitalize }}</a>
+            </li>
+        {% endfor %}
+    <ul>
+</nav>

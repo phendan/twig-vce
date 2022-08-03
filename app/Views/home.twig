@@ -1,0 +1,36 @@
+{# Ausgabe von Daten #}
+{# Hello, {{ user.name }}! #}
+{# {{ dump(users) }} #}
+
+{# Conditionals #}
+{# {% if signedIn %}
+    Hello, {{ user.name }}!
+{% else %}
+    <p>You are not signed in.</p>
+{% endif %} #}
+
+{# {% if user is not empty %}
+    Hello, {{ user.username }}.
+{% else %}
+    <p>You are not signed in.</p>
+{% endif %} #}
+
+{# Loops/Schleifen #}
+{# {% for user in users %}
+    <div>{{ user.getUsername() }}</div>
+{% endfor %} #}
+
+{# Escaping #}
+{% for user in users %}
+    {# {{ user.username|escape }} #}
+    {# {{ user.username|e }} #}
+    {# {{ user.username }} #}
+    {# {{ user.username|raw }} #}
+{% endfor %}
+
+{# Helpful Filter Functions #}
+{% for user in users %}
+    {# <div>{{ user.getUsername()|capitalize }}</div> #}
+{% endfor %}
+{{ users|json_encode }}
+{{ total|number_format(2) }}
